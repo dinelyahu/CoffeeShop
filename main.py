@@ -1,5 +1,5 @@
 
-from ItemInOrder import ItemInOrder
+from CoffeeShop.ItemInOrder import ItemInOrder
 from loaders.data_loader import load_products
 from pathlib import Path
 

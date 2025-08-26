@@ -1,12 +1,12 @@
 from datetime import datetime
 from CoffeeShop.Product import Product
-from ItemInOrder import ItemInOrder
+from CoffeeShop.ItemInOrder import ItemInOrder
 from enum import Enum , auto
 
 class OrderStatus(Enum):
     OPEN = auto()
     PAID = auto()
-    CANCELLED = auto
+    CANCELLED = auto()
 
 class Order:
 
@@ -108,6 +108,6 @@ class Order:
 
         return f"""{type(self).__name__} ID: {self._id}
 Customer Name: {self.customer_name}
-Status: {self._status}
+Status: {self._status.name}
 Items:
 {all_items}"""

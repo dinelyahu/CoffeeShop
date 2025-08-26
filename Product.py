@@ -46,7 +46,7 @@ class Product:
             raise ValueError(f"{price} has to be equal or greater than zero")
         if not math.isfinite(price):
             raise ValueError("Price must be a finite number")
-        self._price = round(price , 2)
+        self._price = price
 
     @property
     def category(self):

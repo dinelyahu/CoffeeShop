@@ -28,14 +28,14 @@ class Inventory:
         self._stock = validated
 
     def available(self, product_id: int):
-        if type(self._stock[product_id]) is not  int:
+        if type(product_id) is not  int:
             raise TypeError(f"product id must be int")
         try:
             return self._stock[product_id]
         except KeyError:
             raise KeyError(f"unknown product_id {product_id}")
 
-    def exists(self, product_id: int) -> bool:
+    def has(self, product_id: int) -> bool:
         if not (isinstance(product_id, int) and not isinstance(product_id, bool)):
             raise TypeError("product_id must be int")
         return product_id in self._stock
