@@ -48,4 +48,38 @@ def index_products_by_id_and_name(products: List[Product])-> tuple[dict[int , Pr
 
 
 
+def save_inventory(
+    path,
+    stock_by_id: dict[int, int],
+    by_id: dict[int, Product],
+    *,
+    drop_zeros: bool = True,
+    sort_by_name: bool = True
+) -> None:
 
+    if not isinstance(stock_by_id, dict):
+        raise TypeError("stock_by_id must be dict[int, int]")
+    if not isinstance(by_id, dict):
+        raise TypeError("by_id must be dict[int, Product]")
+
+    rows = []
+    for pid, qty in stock_by_id.items():
+        if type(pid) is not int:
+            raise TypeError(f"product_id {pid!r} must be int")
+        if type(qty) is not int:
+            raise TypeError(f"quantity for product_id {pid} must be int")
+        if qty < 0:
+            raise ValueError(f"quantity for product_id {pid} must be >= 0")
+        if drop_zeros and qty == 0:
+            continue
+        try:
+            name = by_id[pid].name
+        except KeyError:
+            raise KeyError(f"unknown product_id {pid} (not in by_id)")
+        rows.append({"name": name, "quantity": qty})
+
+    if sort_by_name:
+        rows.sort(key=lambda r: r["name"].strip().casefold())
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, indent=2)

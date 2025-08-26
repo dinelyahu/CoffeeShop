@@ -35,7 +35,7 @@ class Inventory:
         except KeyError:
             raise KeyError(f"unknown product_id {product_id}")
 
-    def has(self, product_id: int) -> bool:
+    def exists(self, product_id: int) -> bool:
         if not (isinstance(product_id, int) and not isinstance(product_id, bool)):
             raise TypeError("product_id must be int")
         return product_id in self._stock
@@ -66,3 +66,16 @@ class Inventory:
 
         self._stock[product_id] = new_qty
 
+    def has(self, product_id: int, qty: int = 1) -> bool:
+        if type(product_id) is not int:
+            raise TypeError("product_id must be int")
+        if type(qty) is not int:
+            raise TypeError("qty must be int")
+        if qty <= 0:
+            raise ValueError("qty must be > 0")
+        available = self._stock.get(product_id)
+        return (available is not None) and (available >= qty)
+
+    def to_dict(self) -> dict[int, int]:
+        """צילום מצב מלאי בפורמט {product_id: quantity} לשמירה/דיבוג"""
+        return dict(self._stock)  # העתק, לא את המילון הפנימי
