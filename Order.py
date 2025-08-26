@@ -59,15 +59,14 @@ class Order:
     def remove_item(self, item_id: int, quantity: int = 1):
         if not isinstance(quantity, int):
             raise TypeError("Not an integer")
-        if quantity < 0:
+        if quantity <= 0:
             raise ValueError("Quantity must be greater than zero")
 
         for item in self._items:
             if item.product.id == item_id:
                 if item.quantity < quantity:
                     raise ValueError(f"You can remove only {item.quantity} items")
-                if item.quantity -quantity < 0:
-
+                if item.quantity - quantity == 0:
                     self._items.remove(item)
                     return
                 else:

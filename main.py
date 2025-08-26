@@ -20,6 +20,7 @@ order1.add_item(product2, 3)
 print(order1)
 print(order1.calculate_total_price())
 
-order1.remove_item(product3.id)
+print(product2.id)
+order1.remove_item(2, 3)
 
 print("\n",order1)
