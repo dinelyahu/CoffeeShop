@@ -1,4 +1,4 @@
-from Product import Product
+from CoffeeShop.Product import Product
 
 
 class ItemInOrder:

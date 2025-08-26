@@ -1,6 +1,5 @@
 import math
 
-
 class Product:
 
     _id_counter = 0

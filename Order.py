@@ -1,5 +1,5 @@
 from datetime import datetime
-from Product import Product
+from CoffeeShop.Product import Product
 from ItemInOrder import ItemInOrder
 
 
