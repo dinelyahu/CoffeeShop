@@ -1,8 +1,23 @@
+from CoffeeShop.ItemInOrder import ItemInOrder
 from Product import Product
-
+from ItemInOrder import ItemInOrder
+from Order import Order
 
 product1 = Product('glass' , 50 ,)
+product2 = Product('chocolate' , 50 ,)
+product3 = Product('coffee' , 60 ,)
 
+itemInOrder1 = ItemInOrder(product1, 3)
+itemInOrder2 = ItemInOrder(product2, 2)
+itemInOrder3 = ItemInOrder(product3, 4)
 
-print(product1.name)
-print(product1)
+order1 = Order('Din' )
+order1.add_item(product3, 3)
+order1.add_item(product3, 3)
+order1.add_item(product3, 3)
+order1.add_item(product2, 3)
+
+order1.calculate_total_price()
+
+print(order1)
+print(order1.calculate_total_price())

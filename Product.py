@@ -83,7 +83,7 @@ class Product:
         return f"{type(self).__name__} ({self.id}, '{self.name}', {self.price}, '{self.category}', {self.is_active})"
 
     def __eq__(self, other):
-        if not isinstance(self , other):
+        if type(other) is not type(self):
             return NotImplemented
         return self.id == other.id
 
