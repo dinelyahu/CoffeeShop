@@ -1,4 +1,3 @@
-from CoffeeShop.ItemInOrder import ItemInOrder
 from Product import Product
 from ItemInOrder import ItemInOrder
 from Order import Order
@@ -17,7 +16,10 @@ order1.add_item(product3, 3)
 order1.add_item(product3, 3)
 order1.add_item(product2, 3)
 
-order1.calculate_total_price()
 
 print(order1)
 print(order1.calculate_total_price())
+
+order1.remove_item(product3.id)
+
+print("\n",order1)

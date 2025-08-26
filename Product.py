@@ -79,6 +79,8 @@ class Product:
         cls._id_counter+=1
         return cls._id_counter
 
+    def __str__(self):
+        return f"Product ID: {self._id} , ('{self._name}', price:{self.price}, {self._category}, {self._is_active})"
     def __repr__(self):
         return f"{type(self).__name__} ({self.id}, '{self.name}', {self.price}, '{self.category}', {self.is_active})"
 

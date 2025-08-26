@@ -56,11 +56,23 @@ class Order:
 
         self._items.append(ItemInOrder(product, quantity))
 
-    def remove_item(self, item_id: int):
+    def remove_item(self, item_id: int, quantity: int = 1):
+        if not isinstance(quantity, int):
+            raise TypeError("Not an integer")
+        if quantity < 0:
+            raise ValueError("Quantity must be greater than zero")
+
         for item in self._items:
             if item.product.id == item_id:
-                self._items.remove(item)
-                return
+                if item.quantity < quantity:
+                    raise ValueError(f"You can remove only {item.quantity} items")
+                if item.quantity -quantity < 0:
+
+                    self._items.remove(item)
+                    return
+                else:
+                    item.quantity = item.quantity - quantity
+                    return
         raise KeyError("Not found an item")
 
     def calculate_total_price(self):
@@ -70,13 +82,13 @@ class Order:
         return total
 
     def __repr__(self):
+        return f"{type(self).__name__}"
+    def __str__(self):
 
-        all_items =""
-        for item in self._items:
-            all_items = all_items + str(item)+"\n"
+        lines = [str(item) for item in self._items]
+        all_items = "\n".join(lines) if lines else "(empty)"
 
-        return f"""
-{type(self).__name__} ID: {self._id}
+        return f"""{type(self).__name__} ID: {self._id}
 Customer Name: {self.customer_name}
 Items:
-{all_items}  """
+{all_items}"""
