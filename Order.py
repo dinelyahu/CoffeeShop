@@ -1,7 +1,12 @@
 from datetime import datetime
 from CoffeeShop.Product import Product
 from ItemInOrder import ItemInOrder
+from enum import Enum , auto
 
+class OrderStatus(Enum):
+    OPEN = auto()
+    PAID = auto()
+    CANCELLED = auto
 
 class Order:
 
@@ -11,6 +16,7 @@ class Order:
         self.customer_name = customer_name
         self._items = []
         self._time_stamp = datetime.now()
+        self._status = OrderStatus.OPEN
 
 
     #methods:
@@ -40,6 +46,13 @@ class Order:
     @property
     def items(self):
         return self._items
+
+
+    @property
+    def status(self):
+        return self._status
+
+
 
     def add_item(self, product: Product , quantity: int = 1):
         if not isinstance(product, Product):
@@ -80,6 +93,12 @@ class Order:
             total += item.calculate_total_price()
         return total
 
+
+    def mark_paid(self):
+        if self.status == OrderStatus.PAID:
+            raise ValueError("The order already got paid")
+        self._status = OrderStatus.PAID
+
     def __repr__(self):
         return f"{type(self).__name__}"
     def __str__(self):
@@ -89,5 +108,6 @@ class Order:
 
         return f"""{type(self).__name__} ID: {self._id}
 Customer Name: {self.customer_name}
+Status: {self._status}
 Items:
 {all_items}"""
