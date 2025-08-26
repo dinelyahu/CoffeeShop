@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Espresso",
+    "quantity": 200
+  },
+  {
+    "name": "Cappuccino",
+    "quantity": 180
+  },
+  {
+    "name": "Latte",
+    "quantity": 170
+  },
+  {
+    "name": "Americano",
+    "quantity": 150
+  },
+  {
+    "name": "Mocha",
+    "quantity": 140
+  },
+  {
+    "name": "Iced Latte",
+    "quantity": 130
+  },
+  {
+    "name": "Cold Brew",
+    "quantity": 120
+  },
+  {
+    "name": "Hot Chocolate",
+    "quantity": 110
+  },
+  {
+    "name": "Tea",
+    "quantity": 200
+  },
+  {
+    "name": "Butter Croissant",
+    "quantity": 60
+  },
+  {
+    "name": "Chocolate Croissant",
+    "quantity": 55
+  },
+  {
+    "name": "Blueberry Muffin",
+    "quantity": 70
+  },
+  {
+    "name": "Bagel",
+    "quantity": 80
+  },
+  {
+    "name": "Cheese Sandwich",
+    "quantity": 50
+  },
+  {
+    "name": "Tuna Sandwich",
+    "quantity": 40
+  }
+]

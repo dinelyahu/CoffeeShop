@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Espresso",
+    "price": 8.0,
+    "category": "Coffee",
+    "is_active": true
+  },
+  {
+    "name": "Cappuccino",
+    "price": 12.0,
+    "category": "Coffee",
+    "is_active": true
+  },
+  {
+    "name": "Latte",
+    "price": 13.5,
+    "category": "Coffee",
+    "is_active": true
+  },
+  {
+    "name": "Americano",
+    "price": 10.0,
+    "category": "Coffee",
+    "is_active": true
+  },
+  {
+    "name": "Mocha",
+    "price": 14.0,
+    "category": "Coffee",
+    "is_active": true
+  },
+  {
+    "name": "Iced Latte",
+    "price": 14.5,
+    "category": "Cold drink",
+    "is_active": true
+  },
+  {
+    "name": "Cold Brew",
+    "price": 15.0,
+    "category": "Cold drink",
+    "is_active": true
+  },
+  {
+    "name": "Hot Chocolate",
+    "price": 12.0,
+    "category": "Hot drink",
+    "is_active": true
+  },
+  {
+    "name": "Tea",
+    "price": 8.0,
+    "category": "Hot drink",
+    "is_active": true
+  },
+  {
+    "name": "Butter Croissant",
+    "price": 14.0,
+    "category": "Pastry",
+    "is_active": true
+  },
+  {
+    "name": "Chocolate Croissant",
+    "price": 15.0,
+    "category": "Pastry",
+    "is_active": true
+  },
+  {
+    "name": "Blueberry Muffin",
+    "price": 12.0,
+    "category": "Pastry",
+    "is_active": true
+  },
+  {
+    "name": "Bagel",
+    "price": 10.0,
+    "category": "Pastry",
+    "is_active": true
+  },
+  {
+    "name": "Cheese Sandwich",
+    "price": 18.0,
+    "category": "Sandwich",
+    "is_active": true
+  },
+  {
+    "name": "Tuna Sandwich",
+    "price": 20.0,
+    "category": "Sandwich",
+    "is_active": true
+  }
+]

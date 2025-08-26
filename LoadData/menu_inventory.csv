@@ -1,0 +1,16 @@
+name,price,category,is_active,stock_qty
+Espresso,8.0,Coffee,True,200
+Cappuccino,12.0,Coffee,True,180
+Latte,13.5,Coffee,True,170
+Americano,10.0,Coffee,True,150
+Mocha,14.0,Coffee,True,140
+Iced Latte,14.5,Cold drink,True,130
+Cold Brew,15.0,Cold drink,True,120
+Hot Chocolate,12.0,Hot drink,True,110
+Tea,8.0,Hot drink,True,200
+Butter Croissant,14.0,Pastry,True,60
+Chocolate Croissant,15.0,Pastry,True,55
+Blueberry Muffin,12.0,Pastry,True,70
+Bagel,10.0,Pastry,True,80
+Cheese Sandwich,18.0,Sandwich,True,50
+Tuna Sandwich,20.0,Sandwich,True,40
